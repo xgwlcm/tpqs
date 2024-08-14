@@ -1,0 +1,218 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0033)https://www.njiaowl.com.cn/ -->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="Keywords" content="在线取色工具，图片取色，取色，提色">
+<meta name="description" content="图片在线取色">
+<title>图片取色 </title>
+<link rel="shortcut icon" href="favicon.png" type="images/x-icon" />
+<link rel="stylesheet" type="text/css" href="normalize.css" />
+<script type="text/javascript" src="ionicons.js"></script>
+<link rel="stylesheet" type="text/css" href="demo.css" />
+<link rel="stylesheet" type="text/css" href="component.css" />
+<link rel="stylesheet" type="text/css" href="media_timess.css">
+<script type="text/javascript" src="modernizr.custom.js"></script>
+
+</head>
+
+<script>
+window.onload=function()
+{
+document.getElementById('file').onchange = function(evt) {
+
+// 如果浏览器不支持FileReader，则不处理
+
+if (!window.FileReader) return;
+
+var files = evt.target.files;
+
+for (var i = 0, f; f = files[i]; i++) {
+
+if (!f.type.match('image.*')) {
+
+continue;
+
+}
+
+
+var reader = new FileReader();
+
+reader.onload = (function(theFile) {
+
+return function(e) {
+
+// img 元素
+
+document.getElementById('previewImage').src = e.target.result;
+
+};
+
+})(f);
+
+
+reader.readAsDataURL(f);
+
+}
+
+}
+}
+</script>
+
+<body>
+
+<svg viewBox="0 0 640 360" class="hidden">
+	<filter id="grayscale">
+		<feColorMatrix type="saturate" values="0"/>
+	</filter>
+</svg>
+<div class="container">
+	
+	<div style="height:40px;"></div>
+	
+	<div class="content">
+		<div id="slider" class="slider">
+			<div class="slider__item slider__item--current">
+				<img  id="previewImage" class="slider__img" src="1.jpg" alt="img01"  />
+			</div>
+			
+			<nav class="slider__nav-wrap">
+				<button class="slider__nav slider__nav--prev"><span class="text-hidden">Previous</span></button>
+				<button class="slider__nav slider__nav--next"><span class="text-hidden">Next</span></button>
+			</nav>
+		</div><!-- /slider -->
+		<div class="tools">
+			<button class="button-color"><ion-icon name="color-filter"></ion-icon></button>
+			<div class="button2-color-div">
+				<label for="iupload"><ion-icon name="cloud-upload" font-size: 64px;></ion-icon></label>
+				<input class="button2-color id="iupload" type="file" name="" id="file" value="" />
+			</div>
+      <ul class="palette">
+				<li class="palette__item">
+					<div class="palette__inner">
+						<div class="palette__fill"></div>
+						<ion-icon name="color-palette"></ion-icon>
+						<div class="palette__name">
+							<span class="palette__value palette__value--default">#######</span>
+							<span class="palette__value palette__value--real">#######</span>
+						</div>
+					</div>
+					<i class="drop drop--1"></i>
+					<i class="drop drop--2"></i>
+					<i class="drop drop--3"></i>
+					<i class="drop drop--4"></i>
+				</li>
+				<li class="palette__item">
+					<div class="palette__inner">
+						<div class="palette__fill"></div>
+						<ion-icon name="color-palette"></ion-icon>
+						<div class="palette__name">
+							<span class="palette__value palette__value--default">#######</span>
+							<span class="palette__value palette__value--real">#######</span>
+						</div>
+					</div>
+					<i class="drop drop--1"></i>
+					<i class="drop drop--2"></i>
+					<i class="drop drop--3"></i>
+					<i class="drop drop--4"></i>
+				</li>
+				<li class="palette__item">
+					<div class="palette__inner">
+						<div class="palette__fill"></div>
+						<ion-icon name="color-palette"></ion-icon>
+						<div class="palette__name">
+							<span class="palette__value palette__value--default">#######</span>
+							<span class="palette__value palette__value--real">#######</span>
+						</div>
+					</div>
+					<i class="drop drop--1"></i>
+					<i class="drop drop--2"></i>
+					<i class="drop drop--3"></i>
+					<i class="drop drop--4"></i>
+				</li>
+				<li class="palette__item">
+					<div class="palette__inner">
+						<div class="palette__fill"></div>
+						<ion-icon name="color-palette"></ion-icon>
+						<div class="palette__name">
+							<span class="palette__value palette__value--default">#######</span>
+							<span class="palette__value palette__value--real">#######</span>
+						</div>
+					</div>
+					<i class="drop drop--1"></i>
+					<i class="drop drop--2"></i>
+					<i class="drop drop--3"></i>
+					<i class="drop drop--4"></i>
+				</li>
+				<li class="palette__item">
+					<div class="palette__inner">
+						<div class="palette__fill"></div>
+						<ion-icon name="color-palette"></ion-icon>
+						<div class="palette__name">
+							<span class="palette__value palette__value--default">#######</span>
+							<span class="palette__value palette__value--real">#######</span>
+						</div>
+					</div>
+					<i class="drop drop--1"></i>
+					<i class="drop drop--2"></i>
+					<i class="drop drop--3"></i>
+					<i class="drop drop--4"></i>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+</div>
+
+<script type="text/javascript" src="classie.js"></script>
+<script type="text/javascript" src="Vibrant.min.js"></script>
+<script type="text/javascript" src="main.js"></script>
+<!--[if !IE]><!-->	
+        <div class="copyright">
+            <p style="padding-left: 3%;padding-top: 14px; width: 70%;">
+                <a href="#">QQ：211611411</a>
+            </p>
+            <p style=" padding-left: 3%; width: 70%;">
+               <a href="https://211611411.github.io" target="_top" target="_blank" rel="nofollow">Copyright © 2019–2024 轩哥哥</a>
+            </p>
+        </div>
+<!--<![endif]-->
+	
+	
+	<script>
+//手机打开浮层
+$("#dd").click(function(){
+	//var s = $(".dropdown").css('overflow');
+	/*if ( s=='hidden' ){
+		$(".dropdown").css('overflow','visible');
+	}else{
+		$(".dropdown").css('overflow','hidden');
+	}*/
+	var s = $(this).hasClass('active');
+	if ( s ){
+		$(this).removeClass('active');
+	}else{
+		$(this).addClass('active');
+	}
+	var b = $(".search_top").css('display');
+
+	if ( b=='block'  ){$(".search_top").css('display','none');
+}
+})
+$(".so_icon").click(function(){
+	var s = $(".search_top").css('display');
+	if ( s=='none' ){
+		$(".search_top").css('display','block');
+	}else{
+		$(".search_top").css('display','none');
+	}
+	var b = $("#dd").hasClass('active');
+	if ( b  ){$("#dd").removeClass('active');
+	}
+})
+</script>
+</body>
+</html>
