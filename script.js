@@ -10,7 +10,7 @@ const navButtons = {
 const pageTitles = {
   home: '调色板',
   picker: '图片取色',
-  more: '优选柬帖'
+  more: '优选颜色'
 };
 
 let currentPage = 'home';
